@@ -59,7 +59,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 .bg-dark1{
-    background: url('../img/bg-1.jpg');
+    background-color: black;
     /*background-size: cover;*/
 }
 .bg-dark2{
@@ -3901,16 +3901,16 @@ input:checked + label .description-about {
 }
 
 .card-about[for="c1"] {
-    background-image: url('/ad-agency/img/immersive\ therapy-happymoves.jpg');
+    background-image: url('./ad-agency/img/immersive\ therapy-happymoves.jpg');
 }
 .card-about[for="c2"] {
-    background-image: url('/ad-agency/img/customized\ programs-happymoves.jpg');
+    background-image: url('./ad-agency/img/customized\ programs-happymoves.jpg');
 }
 .card-about[for="c3"] {
-    background-image: url('/ad-agency/img/progress\ tracking-happymoves.jpg');
+    background-image: url('./ad-agency/img/progress\ tracking-happymoves.jpg');
 }
 .card-about[for="c4"] {
-    background-image: url('/ad-agency/img/skill\ improvement-happymoves.jpg');
+    background-image: url('./ad-agency/img/skill\ improvement-happymoves.jpg');
 }
 @media screen and (max-width: 576px) {
     .container-about {
@@ -4035,15 +4035,15 @@ input:checked + label {
   }
 
   .back-1{
-    background-image: url(/ad-agency/img/strength-happymoves.jpg);
+    background-image: url(./ad-agency/img/strength-happymoves.jpg);
     background-size: cover;
   }
   .back-2{
-    background-image: url(/ad-agency/img/pleasent-happymoves.jpg);
+    background-image: url(./ad-agency/img/pleasent-happymoves.jpg);
     background-size: cover;
   }
   .back-3{
-    background-image: url(/ad-agency/img/cognitive-happymoves.jpg);
+    background-image: url(./ad-agency/img/cognitive-happymoves.jpg);
     background-size: cover;
   }
   .front-1{
