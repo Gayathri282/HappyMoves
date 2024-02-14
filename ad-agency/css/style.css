@@ -3216,8 +3216,8 @@ ul.rounded li::before {
 }
 
 .dot {
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: #000;
     position: absolute;
@@ -4232,6 +4232,7 @@ input:checked + label {
     text-shadow: 1px 1px rgba(0,0,0,0.1);
     text-transform: uppercase;
     font-weight: 400;
+    margin-top: -30px;
   }
   
   :root {
@@ -4479,3 +4480,35 @@ input:checked + label {
 
     background-color: #000;
   }
+  .js-rotating{
+    margin-bottom: -145px;
+}
+/* Adjust the animation duration as needed */
+
+.js-rotating p {
+    opacity: 0; /* Start with the text hidden */
+    animation: fadeInOut 4s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+        font-size: 16px; /* Initial font size */
+    }
+    10%, 90% {
+        opacity: 1;
+        font-size: 20px; /* Font size when fully visible */
+    }
+}
+
+
+.contact-number{
+    color: white;
+}
+.contact-number:hover{
+
+    color: #25d366;
+}
+.oqulix-link:hover{
+    color: var(--color-bg1);
+}
