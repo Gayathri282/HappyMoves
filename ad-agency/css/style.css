@@ -3994,7 +3994,7 @@ input:checked + label {
 .container-thirdsection {
     width: 350px;
     height: 280px;
-    perspective: 500px;
+    perspective: 400px;
     padding: 10px;
   }
   
@@ -4007,7 +4007,7 @@ input:checked + label {
     height: 100%;
     width: 100%;
     position: relative;
-    transition: transform 1500ms;
+    transition: transform 1000ms;
     transform-style: preserve-3d;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     border-radius: 26px;
@@ -4031,7 +4031,7 @@ input:checked + label {
 
   
   .back-thirdsection {
-    background-color: #3a3a3a;
+    background-color: var(--color-bg1);
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
@@ -4046,7 +4046,7 @@ input:checked + label {
     font-weight: 500;
   }
 
-  .back-1{
+  /* .back-1{
     background-image: url(../img/strength-happymoves.jpg);
     background-size: cover;
   }
@@ -4057,7 +4057,7 @@ input:checked + label {
   .back-3{
     background-image: url(../img/cognitive-happymoves.jpg);
     background-size: cover;
-  }
+  } */
   .front-1{
     border: 4px solid #e57bff;
   }
