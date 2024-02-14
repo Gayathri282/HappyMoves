@@ -640,6 +640,53 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+//for click 
+document.addEventListener("DOMContentLoaded", function() {
+    // Add click event listener to each team member
+    var teamMembers = document.querySelectorAll('.team-member');
+    teamMembers.forEach(function(member, index) {
+        member.addEventListener('click', function(event) {
+            // Hide all team descriptions
+            var allDescriptions = document.querySelectorAll('.team-description');
+            allDescriptions.forEach(function(description) {
+                description.style.display = 'none';
+            });
+            // Show the selected team description
+            var selectedDescription = document.querySelector('#selected-item-description');
+            selectedDescription.style.display = 'block';
+            // Change the text of the paragraph based on the clicked item
+            var selectedItemText = document.querySelector('#selected-item-text');
+            switch(index) {
+                case 0:
+                    selectedItemText.textContent = "Our VR technology offers engaging hand therapy sessions to promote dexterity, coordination, and fine motor skills. Patients can enjoy interactive games and exercises designed to facilitate recovery from hand injuries, arthritis, or neurological conditions.";
+                    break;
+                case 1:
+                    selectedItemText.textContent = "Happy Moves goes beyond physical rehabilitation to address cognitive functions such as memory, attention, and problem-solving. Our VR platform offers stimulating cognitive exercises and activities to support brain health and overall well-being.";
+                    break;
+                case 2:
+                    selectedItemText.textContent = "Our virtual reality platform offers targeted exercises and therapies designed to improve neck mobility, flexibility, and strength. With personalised programs and immersive experiences, patients can regain comfort and function in their daily activities.";
+                    break;
+                case 3:
+                    selectedItemText.textContent = "Happy Moves provides comprehensive shoulder rehabilitation programs aimed at enhancing range of motion, stability, and strength. Through interactive VR exercises, users can effectively recover from injuries, surgeries, or chronic conditions affecting the shoulder.";
+                    break;
+                default:
+                    selectedItemText.textContent = " ";
+            }
+            event.stopPropagation(); // Prevent the click event from bubbling up
+        });
+    });
+
+    // Add click event listener to the document to hide text when anything apart from the li item is clicked
+    document.addEventListener('click', function(event) {
+        var clickedElement = event.target;
+        // Check if the clicked element is not an li item or its parent is not an li item
+        if (clickedElement.tagName !== 'LI' && clickedElement.parentElement.tagName !== 'LI') {
+            var selectedDescription = document.querySelector('#selected-item-description');
+            selectedDescription.style.display = 'none';
+        }
+    });
+});
+
 
 
   
@@ -650,9 +697,9 @@ document.addEventListener("DOMContentLoaded", function() {
     window.location.href = 'tel:' + phoneNumber;
 }
 //JAvascript for reloading page while clicking the logo
-function reloadPage() {
-    location.reload();
-}
+// function reloadPage() {
+//     location.reload();
+// }
 
 let items = document.querySelectorAll('.slider .list .item');
 let next = document.getElementById('next');
@@ -736,7 +783,82 @@ document.addEventListener('DOMContentLoaded', function() {
         tgX = event.clientX;
         tgY = event.clientY;
     });
+    window.addEventListener('touchmove', function(event) {
+        // Update target position based on mouse coordinates
+        tgX = event.clientX;
+        tgY = event.clientY;
+    });
 
     // Call the move function to start the animation
     move();
 });
+
+//Js rotating
+const rotatingText = document.querySelector('.js-rotating p');
+const sentences = ['Make rehabilitation efficient', 'Make recovery entertaining'];
+let index = 0;
+
+// Hide the text initially
+rotatingText.style.opacity = '0';
+
+function rotateSentence() {
+    rotatingText.textContent = sentences[index];
+    index = (index + 1) % sentences.length;
+
+    // Add a class to show the text with the transition
+    rotatingText.classList.add('show');
+    setTimeout(() => {
+        rotatingText.classList.remove('show');
+    }, 1000);
+}
+
+// Set initial delay before starting the rotation
+setTimeout(() => {
+    // Show the text after the initial delay
+    rotatingText.style.opacity = '1';
+    
+    // Set interval for rotating the sentences every 3 seconds (adjust as needed)
+    setInterval(() => {
+        // Call rotateSentence to rotate the sentences
+        rotateSentence();
+    }, 4000);
+}, 800); // Adjust the delay as needed
+
+
+
+//EmaailJS
+const serviceId='service_hdxg4xc'
+const templateId='template_0qhoaej'
+function sendMail() {
+    var params = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      contact:document.getElementById('contact').value,
+      organization:document.getElementById('organization').value,
+      subject:document.getElementById('subject').value,
+      message: document.getElementById("message").value,
+    };
+  
+   
+  
+      emailjs.send(serviceId, templateId, params)
+      .then(res=>{
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("message").value = "";
+          document.getElementById("subject").value = "";
+          document.getElementById("contact").value = "";
+          document.getElementById("organization").value = "";
+          console.log(res);
+          alert("Your message sent successfully!!")
+  
+      })
+      .catch(err=>console.log(err));
+  
+  }
+  const contactForm=document.getElementById('contactForm')
+  contactForm.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    sendMail();
+  })
+  
