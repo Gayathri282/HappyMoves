@@ -62,10 +62,11 @@ body {
     background-color:#FBFADA;
     /*background-size: cover;*/
 }
-.bg-dark2{
+/* .bg-dark2{
     background: url('../img/bg-2.jpg');
-    /*background-size: cover;*/
-}
+   
+} 
+*/
 
 
 ol, ul {
@@ -678,6 +679,13 @@ nav .btn-setting {
     
 } 
 @media (max-width: 767px) {
+    .menu-lines {
+        transform: rotateY(180deg);
+        display: block;
+        
+    } 
+}
+@media(max-width:1000px){
     .menu-lines {
         transform: rotateY(180deg);
         display: block;
@@ -1921,7 +1929,7 @@ footer.bg-black2 {
     width: 100%;
 }
 /* parallax images */
-.parallax1 {
+/* .parallax1 {
     background: url("../img/parallax1.1.png");
 }
 .parallax2 {
@@ -1929,7 +1937,7 @@ footer.bg-black2 {
 }
 .newsletter1 {
     background: url("../img/newsletter.jpg");
-}
+} */
 
 /* parallax setting */
 .parallax-setting {
@@ -2260,7 +2268,7 @@ footer.bg-black2 {
     }
    
     .item-wrapper .background-layer{
-        width: auto;
+        /* width: auto; */
         height: 100vh;
         object-fit: cover;
     
@@ -2787,6 +2795,11 @@ team-list{
     text-shadow: 1px 1px rgba(0,0,0,0.1);
     text-align: center;
   }
+  .text-container span{
+    /* font-size: 20px; */
+    margin-bottom: 200px;
+    font-weight: 400;
+}
   .team-container .span{
     align-items: center;
     text-align: center;
@@ -3111,14 +3124,16 @@ team-list{
 #description{
     background: linear-gradient(to bottom, #1B1A55, #535C91);
 }
-#home{
+#home,
+#home2 {
     height: 100vh;
 }
-#home .container .row{
+
+#home .container .row,
+#home2 .container .row {
     align-items: center;
     justify-content: center;
     text-align: center;
-    
 }
 @media (max-width: 767px) {
     #home .container .row{
@@ -3217,6 +3232,7 @@ team-list{
         margin: auto;
     }
   }
+
 /* 
 .main-wrapper {
     position: relative;
@@ -3389,9 +3405,10 @@ section{
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     -ms-flex-align: center;
-    align-items: center;
+    /* align-items: center; */
     -ms-flex-pack: justify;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 50px;
     position: fixed;
    /* top: 1px; */
 }
@@ -3458,6 +3475,9 @@ height: 60vh !important;
     }
 }
 
+.row-change{
+    margin-left: auto !important;
+  }
 /* Medium devices (tablets, 501px to 800px) */
 @media (min-width: 501px) and (max-width: 700px) {
     .carousel-caption p{
@@ -3556,3 +3576,6 @@ height: 60vh !important;
         padding: 100px;
     }
 }
+
+
+  
