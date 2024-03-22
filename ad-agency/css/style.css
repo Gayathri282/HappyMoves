@@ -3503,7 +3503,7 @@ height: 60vh !important;
     width: 75%;
     border: 1px solid white;
     border-radius: 2.5rem;
-    padding: 100px;
+    padding: 30px;
     text-align: center;
     margin: auto;
 }
@@ -3549,5 +3549,10 @@ height: 60vh !important;
     }
     .brochure .wrapper{
         padding: 20px;
+    }
+}
+@media(min-width:1280px){
+    .brochure .container .wrapper{
+        padding: 100px;
     }
 }
